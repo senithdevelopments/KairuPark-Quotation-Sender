@@ -1,0 +1,15 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "entryPoints": [
+    {
+      "filePath": "Dev\\Identifying Quotation Email.xaml",
+      "uniqueId": "54117572-ac2a-4012-a9a0-3b0427302063",
+      "type": "process"
+    },
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "ce4c85f3-fac7-4b51-856c-0cf5d939aec5",
+      "type": "process"
+    }
+  ]
+}
