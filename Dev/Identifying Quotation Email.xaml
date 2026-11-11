@@ -140,7 +140,7 @@
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Identifying_Qutation_Email" sap:VirtualizedContainerService.HintSize="775.6,4998.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="Identifying_Qutation_Email" sap:VirtualizedContainerService.HintSize="775.6,5402.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(ugm:GmailMessage)" Name="recivedEmail" />
       <Variable x:TypeArguments="scg:IList(x:String)" Name="newQuatationsThreadId" />
@@ -150,7 +150,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="The process" sap:VirtualizedContainerService.HintSize="761.6,4975.2" sap2010:WorkflowViewState.IdRef="Sequence_29">
+    <Sequence DisplayName="The process" sap:VirtualizedContainerService.HintSize="761.6,5379.2" sap2010:WorkflowViewState.IdRef="Sequence_29">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="isStop" />
       </Sequence.Variables>
@@ -167,9 +167,9 @@
           <InArgument x:TypeArguments="x:Boolean">False</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="728,4717.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+      <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[not isStop]" DisplayName="While" sap:VirtualizedContainerService.HintSize="728,5121.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
         <ui:InterruptibleWhile.Body>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="726.4,4596" sap2010:WorkflowViewState.IdRef="Sequence_30">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="726.4,5000" sap2010:WorkflowViewState.IdRef="Sequence_30">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -196,13 +196,13 @@
               </uga:GetEmailListConnections.Folder>
             </uga:GetEmailListConnections>
             <ui:CreateList x:TypeArguments="x:String" DisplayName="Create List" sap:VirtualizedContainerService.HintSize="692.8,174.4" sap2010:WorkflowViewState.IdRef="CreateList`1_1" NewList="[newQuatationsThreadId]" />
-            <ui:ForEach x:TypeArguments="ugm:GmailMessage" CurrentIndex="{x:Null}" DisplayName="For Each currentGmailMessage" sap:VirtualizedContainerService.HintSize="692.8,4124.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[recivedEmail]">
+            <ui:ForEach x:TypeArguments="ugm:GmailMessage" CurrentIndex="{x:Null}" DisplayName="For Each currentGmailMessage" sap:VirtualizedContainerService.HintSize="692.8,4528.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[recivedEmail]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="ugm:GmailMessage">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ugm:GmailMessage" Name="currentGmailMessage" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="691.2,4003.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="691.2,4407.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Boolean" Name="isJobDone" />
                     </Sequence.Variables>
@@ -221,15 +221,15 @@
                         <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="657.6,3594.4" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[not isJobDone]" DisplayName="While" sap:VirtualizedContainerService.HintSize="657.6,3998.4" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
                       <ui:InterruptibleWhile.Body>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="656,3472.8" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="656,3876.8" sap2010:WorkflowViewState.IdRef="Sequence_28">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="622.4,3412.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="622.4,3816.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -237,13 +237,13 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <TryCatch.Try>
-                              <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="620.8,2791.2" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                              <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="620.8,3195.2" sap2010:WorkflowViewState.IdRef="Sequence_25">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence DisplayName="Processing the email" sap:VirtualizedContainerService.HintSize="587.2,2731.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                <Sequence DisplayName="Processing the email" sap:VirtualizedContainerService.HintSize="587.2,3135.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:String" Name="newEmailThreadID" />
                                     <Variable x:TypeArguments="sd:DataTable" Name="threadDetailsDtbl" />
@@ -254,7 +254,7 @@
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Sequence DisplayName="Check whether its a new email theread" sap:VirtualizedContainerService.HintSize="553.6,2648" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                  <Sequence DisplayName="Check whether its a new email theread" sap:VirtualizedContainerService.HintSize="553.6,3052" sap2010:WorkflowViewState.IdRef="Sequence_3">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="x:Boolean" Name="isNewThread" />
                                     </Sequence.Variables>
@@ -410,27 +410,27 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:CommentOut>
-                                    <If sap2010:Annotation.AnnotationText="continue on new threads" Condition="[isNewThread]" sap:VirtualizedContainerService.HintSize="520,2102.4" sap2010:WorkflowViewState.IdRef="If_4">
+                                    <If sap2010:Annotation.AnnotationText="continue on new threads" Condition="[isNewThread]" sap:VirtualizedContainerService.HintSize="520,2506.4" sap2010:WorkflowViewState.IdRef="If_4">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <If.Then>
-                                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="518.4,1716" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="518.4,2120" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="Chedcking whether its a thread of quation" sap:VirtualizedContainerService.HintSize="484.8,1656" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                          <Sequence DisplayName="Chedcking whether its a thread of quation" sap:VirtualizedContainerService.HintSize="484.8,2060" sap2010:WorkflowViewState.IdRef="Sequence_18">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <If Condition="[currentGmailMessage.Subject.Contains(&quot;Quotation&quot;) or currentGmailMessage.Subject.Contains(&quot;quotation&quot;)]" sap:VirtualizedContainerService.HintSize="451.2,1572.8" sap2010:WorkflowViewState.IdRef="If_5">
+                                            <If Condition="[currentGmailMessage.Subject.Contains(&quot;Quotation&quot;) or currentGmailMessage.Subject.Contains(&quot;quotation&quot;)]" sap:VirtualizedContainerService.HintSize="451.2,1976.8" sap2010:WorkflowViewState.IdRef="If_5">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -438,7 +438,7 @@
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                               <If.Then>
-                                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,1418.4" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,1822.4" sap2010:WorkflowViewState.IdRef="Sequence_20">
                                                   <Sequence.Variables>
                                                     <Variable x:TypeArguments="njl:JObject" Name="customerdetailsjson" />
                                                     <Variable x:TypeArguments="x:String" Name="quotationPath" />
@@ -507,15 +507,15 @@
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </ui:InvokeWorkflowFile>
-                                                  <uga:MarkAsReadUnreadConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" AuthScopesInvalid="False" ConnectionId="ab5ad18f-cf06-4759-a49e-db47bb1fd875" DisplayName="Mark Email as Read or Unread" Email="[currentGmailMessage]" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="MarkAsReadUnreadConnections_1" MarkAs="Read" UseConnectionService="True">
+                                                  <uga:MarkAsReadUnreadConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" AuthScopesInvalid="False" ConnectionId="ab5ad18f-cf06-4759-a49e-db47bb1fd875" DisplayName="Mark Email as Read or Unread" Email="[currentGmailMessage]" sap:VirtualizedContainerService.HintSize="416,236.8" sap2010:WorkflowViewState.IdRef="MarkAsReadUnreadConnections_1" MarkAs="Read" UseConnectionService="True">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </uga:MarkAsReadUnreadConnections>
-                                                  <uga:ReplyToEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" NewSubject="{x:Null}" SingleAttachment="{x:Null}" To="{x:Null}" AttachmentInputMode="UseExisting" Attachments="[{LocalResource.FromPath(quotationPath)}]" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;&lt;STRONG&gt;*** AUTOMATION TEST EMAIL ***&#xD;&#xA;This message was generated by an automated system for testing purposes only. It does not contain official Kairu Park details. Any prices, designs, plant suggestions, dates or other content are sample information and must not be treated as an official quotation or offer&lt;/STRONG&gt;&lt;/SPAN&gt;&lt;SPAN&gt;.&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Thank you.&#xD;&#xA;&#xD;&#xA;Kind regards,&#xD;&#xA;&#xD;&#xA;(Test message – not official Kairu Park communication)&lt;/SPAN&gt;&lt;/P&gt;&quot;)]" ConnectionId="ab5ad18f-cf06-4759-a49e-db47bb1fd875" DisplayName="Reply to Email" Email="[currentGmailMessage]" sap:VirtualizedContainerService.HintSize="416,440.8" sap2010:WorkflowViewState.IdRef="ReplyToEmailConnections_1" Importance="Normal" ReplyToAll="True" SaveAsDraft="False" UseConnectionService="True">
+                                                  <uga:ReplyToEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" NewSubject="{x:Null}" SingleAttachment="{x:Null}" To="{x:Null}" AttachmentInputMode="UseExisting" Attachments="[{LocalResource.FromPath(quotationPath)}]" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;&lt;STRONG&gt;*** AUTOMATION TEST EMAIL ***&#xA;This message was generated by an automated system for testing purposes only. It does not contain official Kairu Park details. Any prices, designs, plant suggestions, dates or other content are sample information and must not be treated as an official quotation or offer&lt;/STRONG&gt;&lt;/SPAN&gt;&lt;SPAN&gt;.&#xA;&#xA;&#xA;&#xA;Thank you.&#xA;&#xA;Kind regards,&#xA;&#xA;(Test message – not official Kairu Park communication)&lt;/SPAN&gt;&lt;/P&gt;&quot;)]" ConnectionId="ab5ad18f-cf06-4759-a49e-db47bb1fd875" DisplayName="Reply to Email" Email="[currentGmailMessage]" sap:VirtualizedContainerService.HintSize="416,440.8" sap2010:WorkflowViewState.IdRef="ReplyToEmailConnections_1" Importance="Normal" ReplyToAll="True" SaveAsDraft="False" UseConnectionService="True">
                                                     <uga:ReplyToEmailConnections.AttachmentsBackup>
                                                       <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="UseExisting">
                                                         <usau:BackupSlot.BackupValues>
@@ -523,7 +523,65 @@
                                                         </usau:BackupSlot.BackupValues>
                                                       </usau:BackupSlot>
                                                     </uga:ReplyToEmailConnections.AttachmentsBackup>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
                                                   </uga:ReplyToEmailConnections>
+                                                  <Delay Duration="00:00:35" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                                                  <TryCatch sap2010:Annotation.AnnotationText="unread thread&#xD;&#xA;" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="416,101.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <TryCatch.Try>
+                                                      <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="449.6,288" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <uga:MarkAsReadUnreadConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" AuthScopesInvalid="False" ConnectionId="ab5ad18f-cf06-4759-a49e-db47bb1fd875" DisplayName="Mark Email as Read or Unread" Email="[currentGmailMessage]" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="MarkAsReadUnreadConnections_3" MarkAs="Read" UseConnectionService="True">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                        </uga:MarkAsReadUnreadConnections>
+                                                      </Sequence>
+                                                    </TryCatch.Try>
+                                                    <TryCatch.Catches>
+                                                      <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                                        <ActivityAction x:TypeArguments="s:Exception">
+                                                          <ActivityAction.Argument>
+                                                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                          </ActivityAction.Argument>
+                                                          <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                          </Sequence>
+                                                        </ActivityAction>
+                                                      </Catch>
+                                                    </TryCatch.Catches>
+                                                    <TryCatch.Finally>
+                                                      <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </Sequence>
+                                                    </TryCatch.Finally>
+                                                  </TryCatch>
                                                   <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_4">
                                                     <ui:CommentOut.Body>
                                                       <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,544" sap2010:WorkflowViewState.IdRef="Sequence_31">
@@ -532,7 +590,7 @@
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="UseExisting" Attachments="[{LocalResource.FromPath(quotationPath)}]" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;&lt;STRONG&gt;*** AUTOMATION TEST EMAIL ***&#xD;&#xA;This message was generated by an automated system for testing purposes only. It does not contain official Kairu Park details. Any prices, designs, plant suggestions, dates or other content are sample information and must not be treated as an official quotation or offer&lt;/STRONG&gt;&lt;/SPAN&gt;&lt;SPAN&gt;.&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Thank you.&#xD;&#xA;&#xD;&#xA;Kind regards,&#xD;&#xA;&#xD;&#xA;(Test message – not official Kairu Park communication)&lt;/SPAN&gt;&lt;/P&gt;&quot;)]" ConnectionId="ab5ad18f-cf06-4759-a49e-db47bb1fd875" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="416,484" sap2010:WorkflowViewState.IdRef="SendEmailConnections_1" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="{}{TEST] Landscaping Quotation from Kairu Park – Automation Testing" To="[New List(Of String) From {currentGmailMessage.MessageId}]" UseConnectionService="True">
+                                                        <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="UseExisting" Attachments="[{LocalResource.FromPath(quotationPath)}]" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;&lt;STRONG&gt;*** AUTOMATION TEST EMAIL ***&#xA;This message was generated by an automated system for testing purposes only. It does not contain official Kairu Park details. Any prices, designs, plant suggestions, dates or other content are sample information and must not be treated as an official quotation or offer&lt;/STRONG&gt;&lt;/SPAN&gt;&lt;SPAN&gt;.&#xA;&#xA;&#xA;&#xA;Thank you.&#xA;&#xA;Kind regards,&#xA;&#xA;(Test message – not official Kairu Park communication)&lt;/SPAN&gt;&lt;/P&gt;&quot;)]" ConnectionId="ab5ad18f-cf06-4759-a49e-db47bb1fd875" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="416,484" sap2010:WorkflowViewState.IdRef="SendEmailConnections_1" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="{}{TEST] Landscaping Quotation from Kairu Park – Automation Testing" To="[New List(Of String) From {currentGmailMessage.MessageId}]" UseConnectionService="True">
                                                           <uga:SendEmailConnections.AttachmentsBackup>
                                                             <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="UseExisting">
                                                               <usau:BackupSlot.BackupValues>
@@ -696,9 +754,6 @@ Kind regards,
                           </TryCatch>
                         </Sequence>
                       </ui:InterruptibleWhile.Body>
-                      <ui:InterruptibleWhile.Condition>
-                        <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="not isJobDone" />
-                      </ui:InterruptibleWhile.Condition>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -718,9 +773,6 @@ Kind regards,
             </ui:ForEach>
           </Sequence>
         </ui:InterruptibleWhile.Body>
-        <ui:InterruptibleWhile.Condition>
-          <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="not isStop" />
-        </ui:InterruptibleWhile.Condition>
       </ui:InterruptibleWhile>
     </Sequence>
   </Sequence>
